@@ -10,6 +10,7 @@ This is not the official Fantastic Caverns site. It is a pitch prototype built f
 - Lead with the clearest differentiator: America's ride-through cave.
 - Make rates, hours, phone, address, and review links easy to update in `data/site.json`.
 - Make tour departure cadence visible with computed next departures.
+- Use a curated set of onsite photos from the June 9, 2026 visit to ground the pitch in real visitor-center messaging.
 - Connect discovery and reputation channels: Google Maps, Tripadvisor, Yelp search, Roadtrippers, and Cave Science.
 - Make the school/group education story easier to pitch.
 
@@ -20,6 +21,7 @@ This is not the official Fantastic Caverns site. It is a pitch prototype built f
 - Tripadvisor listing: `https://www.tripadvisor.com/Attraction_Review-g44926-d258059-Reviews-Fantastic_Caverns-Springfield_Missouri.html`
 - Google Maps search link for Fantastic Caverns in Springfield, MO
 - Roadtrippers attraction listing
+- Onsite visitor photos from `/Users/wes/Library/Mobile Documents/com~apple~CloudDocs/WestleyBurton/Fantastic Cavern`
 
 ## Update-Sensitive Content
 
