@@ -1,0 +1,32 @@
+{
+  "officialName": "Fantastic Caverns",
+  "contact": {
+    "phoneDisplay": "(417) 833-2010",
+    "phoneHref": "tel:+14178332010",
+    "addressHtml": "4872 North Farm Road 125<br>Springfield, MO 65803"
+  },
+  "hours": {
+    "open": "08:00",
+    "close": "21:00",
+    "lastTour": "20:00",
+    "note": "Open daily except Thanksgiving, Christmas Eve, and Christmas Day. Last tour departs one hour before closing."
+  },
+  "rates": [
+    { "label": "Adult", "price": "$36" },
+    { "label": "Child, 6-12", "price": "$18" },
+    { "label": "5 and under", "price": "Free" },
+    { "label": "Adult group", "price": "$24" },
+    { "label": "Child group", "price": "$7" }
+  ],
+  "rateNote": "Group rates are available for 20 or more paid admissions with prior arrangement.",
+  "links": {
+    "officialUrl": "https://www.missouriscave.com/",
+    "ticketsUrl": "https://www.missouriscave.com/",
+    "directionsUrl": "https://www.google.com/maps/search/?api=1&query=Fantastic%20Caverns%204872%20N%20Farm%20Road%20125%20Springfield%20MO",
+    "googleUrl": "https://www.google.com/maps/search/?api=1&query=Fantastic%20Caverns%20Springfield%20MO",
+    "tripadvisorUrl": "https://www.tripadvisor.com/Attraction_Review-g44926-d258059-Reviews-Fantastic_Caverns-Springfield_Missouri.html",
+    "yelpUrl": "https://www.yelp.com/search?find_desc=Fantastic+Caverns&find_loc=Springfield%2C+MO",
+    "roadtrippersUrl": "https://maps.roadtrippers.com/us/springfield-mo/attractions/fantastic-caverns",
+    "caveScienceUrl": "https://cavescience.org/"
+  }
+}

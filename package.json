@@ -1,0 +1,14 @@
+{
+  "name": "fantastic-caverns-concept",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static concept prototype for a Fantastic Caverns website redesign pitch.",
+  "scripts": {
+    "start": "npx serve .",
+    "check": "npx html-validate index.html"
+  },
+  "devDependencies": {
+    "html-validate": "^9.7.1",
+    "serve": "^14.2.4"
+  }
+}

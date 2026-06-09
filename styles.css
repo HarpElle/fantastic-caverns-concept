@@ -1,0 +1,692 @@
+:root {
+  --ink: #171511;
+  --ink-soft: #40372c;
+  --limestone: #f2eee3;
+  --limestone-2: #e5dccb;
+  --paper: #fbf8ef;
+  --moss: #5d7d55;
+  --moss-dark: #344b37;
+  --amber: #d8933f;
+  --amber-deep: #a96529;
+  --cave: #22201c;
+  --cave-2: #33291d;
+  --white: #ffffff;
+  --muted: #746a5d;
+  --line: rgba(23, 21, 17, .14);
+  --shadow: 0 22px 60px rgba(27, 23, 18, .18);
+  --radius: 8px;
+  --max: 1160px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.site-header {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: min(calc(100% - 28px), var(--max));
+  margin: 14px auto 0;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, .2);
+  border-radius: var(--radius);
+  background: rgba(23, 21, 17, .74);
+  color: var(--white);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.brand-mark {
+  display: grid;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--amber);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.brand-text {
+  display: grid;
+}
+
+.brand-text strong {
+  font-size: 14px;
+  line-height: 1.1;
+}
+
+.brand-text small {
+  color: rgba(255, 255, 255, .68);
+  font-size: 11px;
+  letter-spacing: 0;
+}
+
+.desktop-nav {
+  display: flex;
+  gap: 24px;
+  color: rgba(255, 255, 255, .82);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.desktop-nav a:hover,
+.site-footer a:hover {
+  color: var(--amber);
+}
+
+.header-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0 16px;
+  border-radius: var(--radius);
+  background: var(--white);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  padding: 132px max(22px, calc((100vw - var(--max)) / 2)) 82px;
+  color: var(--white);
+  background: var(--cave);
+}
+
+.hero-image,
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-image {
+  background:
+    linear-gradient(90deg, rgba(10, 9, 7, .82), rgba(10, 9, 7, .36) 46%, rgba(10, 9, 7, .64)),
+    url("https://images.squarespace-cdn.com/content/v1/64e633bab649402c1e2c0272/fd668ccc-89fd-44ce-8657-e4a1c6bc80e0/Cave+Coral+good+color2.jpg?format=2500w") center / cover;
+  transform: scale(1.01);
+}
+
+.hero-vignette {
+  background:
+    radial-gradient(circle at 72% 48%, rgba(216, 147, 63, .22), transparent 28%),
+    linear-gradient(180deg, rgba(23, 21, 17, .1), rgba(23, 21, 17, .94));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2 {
+  letter-spacing: 0;
+}
+
+h1 {
+  margin-bottom: 24px;
+  font-size: clamp(52px, 8.5vw, 112px);
+  line-height: .92;
+  max-width: 760px;
+}
+
+.hero p {
+  max-width: 620px;
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, .84);
+  font-size: clamp(17px, 2vw, 22px);
+  line-height: 1.45;
+}
+
+.hero-actions,
+.button {
+  display: flex;
+  align-items: center;
+}
+
+.hero-actions {
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.button {
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 20px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.button.primary {
+  background: var(--amber);
+  color: var(--ink);
+}
+
+.button.secondary {
+  border: 1px solid rgba(255, 255, 255, .34);
+  background: rgba(255, 255, 255, .12);
+  color: var(--white);
+}
+
+.button.dark {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.visit-status {
+  position: absolute;
+  z-index: 3;
+  right: max(22px, calc((100vw - var(--max)) / 2));
+  bottom: 82px;
+  width: min(300px, calc(100% - 44px));
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, .2);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, .12);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+}
+
+.visit-status span,
+.quick-facts span {
+  display: block;
+  color: var(--amber);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.visit-status strong {
+  display: block;
+  margin: 4px 0;
+  font-size: 27px;
+  line-height: 1.05;
+}
+
+.visit-status small {
+  color: rgba(255, 255, 255, .76);
+  font-size: 13px;
+}
+
+.hero-preview {
+  position: absolute;
+  z-index: 3;
+  left: max(22px, calc((100vw - var(--max)) / 2));
+  bottom: 22px;
+  display: flex;
+  gap: 7px;
+}
+
+.hero-preview span {
+  display: block;
+  width: 42px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .34);
+}
+
+.hero-preview span:first-child {
+  background: var(--amber);
+}
+
+.quick-facts {
+  position: relative;
+  z-index: 5;
+  width: min(calc(100% - 32px), var(--max));
+  margin: -44px auto 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.quick-facts article {
+  min-height: 148px;
+  padding: 22px;
+  background: var(--white);
+}
+
+.quick-facts strong {
+  display: block;
+  margin: 7px 0 9px;
+  font-size: 27px;
+  line-height: 1.05;
+}
+
+.quick-facts p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.section {
+  width: min(calc(100% - 32px), var(--max));
+  margin: 0 auto;
+  padding: 96px 0;
+}
+
+.tour-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 460px);
+  gap: 72px;
+  align-items: center;
+}
+
+.section-copy h2,
+.planner-intro h2,
+.section-heading h2,
+.groups-section h2,
+.pitch-section h2 {
+  margin-bottom: 18px;
+  color: var(--ink);
+  font-size: clamp(34px, 5vw, 64px);
+  line-height: .98;
+}
+
+.section-copy > p,
+.planner-intro p,
+.section-heading p,
+.groups-section p {
+  max-width: 660px;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.feature-list {
+  display: grid;
+  gap: 18px;
+  margin-top: 34px;
+}
+
+.feature-list div {
+  display: grid;
+  gap: 4px;
+  padding-left: 18px;
+  border-left: 3px solid var(--amber);
+}
+
+.feature-list strong {
+  font-size: 17px;
+}
+
+.feature-list span {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.media-panel {
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--cave);
+  box-shadow: var(--shadow);
+}
+
+.media-panel img {
+  aspect-ratio: 4 / 5;
+  height: 100%;
+  object-fit: cover;
+}
+
+.planner-section {
+  width: 100%;
+  max-width: none;
+  padding: 96px max(16px, calc((100vw - var(--max)) / 2));
+  background: var(--limestone);
+}
+
+.planner-intro {
+  width: min(720px, 100%);
+  margin-bottom: 34px;
+}
+
+.planner-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.planner-card {
+  min-height: 268px;
+  padding: 24px;
+  border: 1px solid rgba(23, 21, 17, .1);
+  border-radius: var(--radius);
+  background: var(--paper);
+}
+
+.planner-card h3 {
+  margin-bottom: 18px;
+  font-size: 23px;
+}
+
+.planner-card p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.planner-card a {
+  display: inline-flex;
+  margin-top: 12px;
+  color: var(--moss-dark);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.price-card dl {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 18px;
+}
+
+.price-card dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(23, 21, 17, .1);
+}
+
+.price-card dt {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.price-card dd {
+  margin: 0;
+  font-weight: 900;
+}
+
+.groups-section {
+  width: 100%;
+  max-width: none;
+  display: grid;
+  grid-template-columns: minmax(0, 760px) auto;
+  gap: 32px;
+  align-items: center;
+  padding: 96px max(16px, calc((100vw - var(--max)) / 2));
+  background:
+    linear-gradient(90deg, rgba(23, 21, 17, .92), rgba(23, 21, 17, .78)),
+    url("https://images.squarespace-cdn.com/content/v1/64e633bab649402c1e2c0272/d53a1466-2f0d-46db-b68a-a4c875577a2e/Hall+of+Giants+website.jpg?format=2500w") center / cover;
+  color: var(--white);
+}
+
+.groups-section h2,
+.groups-section p {
+  color: var(--white);
+}
+
+.groups-section p {
+  color: rgba(255, 255, 255, .76);
+}
+
+.section-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 520px) minmax(0, 1fr);
+  gap: 48px;
+  align-items: end;
+  margin-bottom: 30px;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.review-grid article {
+  display: grid;
+  min-height: 250px;
+  align-content: start;
+  gap: 14px;
+  padding: 28px;
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: 0 12px 34px rgba(27, 23, 18, .08);
+}
+
+.review-grid strong {
+  color: var(--amber-deep);
+  font-size: 46px;
+  line-height: 1;
+}
+
+.review-grid span {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.review-grid a {
+  margin-top: auto;
+  color: var(--moss-dark);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.pitch-section {
+  display: grid;
+  grid-template-columns: minmax(0, 430px) minmax(0, 1fr);
+  gap: 54px;
+  padding-top: 10px;
+}
+
+.pitch-points {
+  display: grid;
+  gap: 1px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: rgba(23, 21, 17, .12);
+}
+
+.pitch-points p {
+  margin: 0;
+  padding: 22px;
+  background: var(--white);
+  color: var(--muted);
+}
+
+.pitch-points strong {
+  color: var(--ink);
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 34px max(16px, calc((100vw - var(--max)) / 2));
+  background: var(--ink);
+  color: var(--white);
+}
+
+.site-footer div {
+  display: grid;
+  gap: 4px;
+  max-width: 620px;
+}
+
+.site-footer span {
+  color: rgba(255, 255, 255, .66);
+  font-size: 13px;
+}
+
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: center;
+  color: rgba(255, 255, 255, .72);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+@media (max-width: 920px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .hero {
+    min-height: 86vh;
+    padding-top: 118px;
+  }
+
+  .visit-status {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin-top: 32px;
+  }
+
+  .quick-facts,
+  .planner-grid,
+  .review-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tour-section,
+  .groups-section,
+  .section-heading,
+  .pitch-section {
+    grid-template-columns: 1fr;
+  }
+
+  .tour-section {
+    gap: 34px;
+  }
+
+  .groups-section {
+    justify-items: start;
+  }
+}
+
+@media (max-width: 620px) {
+  .site-header {
+    width: calc(100% - 20px);
+    margin-top: 10px;
+  }
+
+  .brand-text small {
+    display: none;
+  }
+
+  .header-action {
+    min-height: 36px;
+    padding-inline: 13px;
+  }
+
+  .hero {
+    min-height: 90vh;
+    padding: 108px 16px 62px;
+  }
+
+  .hero-image {
+    background:
+      linear-gradient(180deg, rgba(10, 9, 7, .52), rgba(10, 9, 7, .88)),
+      url("https://images.squarespace-cdn.com/content/v1/64e633bab649402c1e2c0272/fd668ccc-89fd-44ce-8657-e4a1c6bc80e0/Cave+Coral+good+color2.jpg?format=1500w") center / cover;
+  }
+
+  h1 {
+    font-size: clamp(48px, 17vw, 72px);
+  }
+
+  .hero p {
+    font-size: 17px;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .visit-status {
+    width: 100%;
+  }
+
+  .quick-facts {
+    grid-template-columns: 1fr;
+    margin-top: 0;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .quick-facts article {
+    min-height: 120px;
+  }
+
+  .section {
+    width: calc(100% - 32px);
+    padding: 70px 0;
+  }
+
+  .planner-section,
+  .groups-section {
+    padding: 70px 16px;
+  }
+
+  .planner-grid,
+  .review-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .planner-card,
+  .review-grid article {
+    min-height: auto;
+  }
+
+  .site-footer {
+    display: grid;
+  }
+}
