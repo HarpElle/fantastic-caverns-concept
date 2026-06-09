@@ -20,6 +20,8 @@ This is not the official Fantastic Caverns site. It is a pitch prototype built f
 - Cave Science Program: `https://cavescience.org/`
 - Tripadvisor listing: `https://www.tripadvisor.com/Attraction_Review-g44926-d258059-Reviews-Fantastic_Caverns-Springfield_Missouri.html`
 - Google Maps search link for Fantastic Caverns in Springfield, MO
+- Facebook page: `https://www.facebook.com/fantasticcaverns/`
+- Pinterest profile: `https://www.pinterest.com/fantasticcaverns/`
 - Roadtrippers attraction listing
 - Onsite visitor photos from `/Users/wes/Library/Mobile Documents/com~apple~CloudDocs/WestleyBurton/Fantastic Cavern`
 
