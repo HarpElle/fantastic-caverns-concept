@@ -127,6 +127,10 @@ img {
   font-weight: 800;
 }
 
+.mobile-action-bar {
+  display: none;
+}
+
 .hero {
   position: relative;
   min-height: 92vh;
@@ -218,6 +222,12 @@ h1 {
 .button.secondary {
   border: 1px solid rgba(255, 255, 255, .34);
   background: rgba(255, 255, 255, .12);
+  color: var(--white);
+}
+
+.button.light {
+  border: 1px solid rgba(255, 255, 255, .28);
+  background: rgba(255, 255, 255, .14);
   color: var(--white);
 }
 
@@ -315,10 +325,114 @@ h1 {
   font-size: 14px;
 }
 
+.schedule-section {
+  display: grid;
+  grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
+  gap: 42px;
+  align-items: stretch;
+  padding-bottom: 20px;
+}
+
+.schedule-copy h2 {
+  margin-bottom: 18px;
+  font-size: clamp(34px, 5vw, 62px);
+  line-height: .98;
+}
+
+.schedule-copy p {
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.schedule-board {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr);
+  gap: 1px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, .18);
+  box-shadow: var(--shadow);
+}
+
+.schedule-status,
+.next-times,
+.schedule-actions {
+  padding: 28px;
+  background: var(--cave);
+  color: var(--white);
+}
+
+.schedule-status span,
+.next-times > span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--amber);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.schedule-status strong {
+  display: block;
+  margin-bottom: 14px;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1;
+}
+
+.schedule-status p {
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, .72);
+  font-size: 14px;
+}
+
+.next-times ol {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.next-times li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, .16);
+}
+
+.next-times li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.next-times strong {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.next-times li span {
+  color: rgba(255, 255, 255, .64);
+  font-size: 13px;
+}
+
+.schedule-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, .08);
+}
+
 .section {
   width: min(calc(100% - 32px), var(--max));
   margin: 0 auto;
   padding: 96px 0;
+}
+
+section[id] {
+  scroll-margin-top: 110px;
 }
 
 .tour-section {
@@ -418,6 +532,12 @@ h1 {
 .planner-card p {
   color: var(--muted);
   font-size: 15px;
+}
+
+.planner-card .inline-note {
+  margin-top: -6px;
+  color: var(--ink);
+  font-weight: 800;
 }
 
 .planner-card a {
@@ -593,14 +713,16 @@ h1 {
 
   .quick-facts,
   .planner-grid,
-  .review-grid {
+  .review-grid,
+  .schedule-board {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .tour-section,
   .groups-section,
   .section-heading,
-  .pitch-section {
+  .pitch-section,
+  .schedule-section {
     grid-template-columns: 1fr;
   }
 
@@ -626,6 +748,39 @@ h1 {
   .header-action {
     min-height: 36px;
     padding-inline: 13px;
+  }
+
+  .mobile-action-bar {
+    position: fixed;
+    z-index: 30;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, .18);
+    border-radius: var(--radius);
+    background: rgba(23, 21, 17, .9);
+    color: var(--white);
+    box-shadow: 0 18px 48px rgba(0, 0, 0, .28);
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+  }
+
+  .mobile-action-bar a {
+    display: grid;
+    min-height: 48px;
+    place-items: center;
+    background: rgba(255, 255, 255, .06);
+    font-size: 12px;
+    font-weight: 900;
+  }
+
+  .mobile-action-bar a:first-child {
+    background: var(--amber);
+    color: var(--ink);
   }
 
   .hero {
@@ -677,8 +832,17 @@ h1 {
   }
 
   .planner-grid,
-  .review-grid {
+  .review-grid,
+  .schedule-board {
     grid-template-columns: 1fr;
+  }
+
+  .schedule-section {
+    padding-top: 58px;
+  }
+
+  .schedule-actions {
+    display: none;
   }
 
   .planner-card,
@@ -688,5 +852,6 @@ h1 {
 
   .site-footer {
     display: grid;
+    padding-bottom: 92px;
   }
 }

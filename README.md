@@ -9,6 +9,7 @@ This is not the official Fantastic Caverns site. It is a pitch prototype built f
 - Put mobile trip-planning essentials above the fold: hours, last departure, tickets, directions, call, accessibility, and tour format.
 - Lead with the clearest differentiator: America's ride-through cave.
 - Make rates, hours, phone, address, and review links easy to update in `data/site.json`.
+- Make tour departure cadence visible with computed next departures.
 - Connect discovery and reputation channels: Google Maps, Tripadvisor, Yelp search, Roadtrippers, and Cave Science.
 - Make the school/group education story easier to pitch.
 
@@ -29,6 +30,16 @@ data/site.json
 ```
 
 Update that file first when hours, seasonal last-tour times, admission rates, review links, or phone details change.
+
+The current departure cadence is modeled as:
+
+```text
+Today observed: every 30 minutes
+First tour: 8:00 a.m.
+Last tour: 8:00 p.m.
+```
+
+The official site currently publishes the daily open/close window and last departure, but not whether every-half-hour departures apply every day. Confirm that before making it permanent production copy.
 
 ## Local Preview
 

@@ -11,6 +11,15 @@
     "lastTour": "20:00",
     "note": "Open daily except Thanksgiving, Christmas Eve, and Christmas Day. Last tour departs one hour before closing."
   },
+  "departures": {
+    "firstTour": "08:00",
+    "lastTour": "20:00",
+    "frequencyMinutes": 30,
+    "cadenceLabel": "Every 30 minutes today",
+    "quickLabel": "Today: every 30 minutes.",
+    "shortNote": "Today's observed cadence: every 30 minutes.",
+    "note": "Observed onsite June 9, 2026. Confirm whether this cadence applies daily or seasonally before treating it as permanent."
+  },
   "rates": [
     { "label": "Adult", "price": "$36" },
     { "label": "Child, 6-12", "price": "$18" },

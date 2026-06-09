@@ -25,6 +25,7 @@
 
     <nav class="desktop-nav" aria-label="Primary">
       <a href="#visit">Visit</a>
+      <a href="#schedule">Schedule</a>
       <a href="#tour">Tour</a>
       <a href="#groups">Groups</a>
       <a href="#reviews">Reviews</a>
@@ -32,6 +33,13 @@
 
     <a class="header-action" href="tel:+14178332010">Call</a>
   </header>
+
+  <nav class="mobile-action-bar" aria-label="Mobile quick actions">
+    <a data-bind-href="ticketsUrl" href="https://www.missouriscave.com/" target="_blank" rel="noreferrer">Tickets</a>
+    <a href="#schedule">Times</a>
+    <a data-bind-href="directionsUrl" href="https://www.google.com/maps/search/?api=1&query=Fantastic%20Caverns%204872%20N%20Farm%20Road%20125%20Springfield%20MO" target="_blank" rel="noreferrer">Map</a>
+    <a href="tel:+14178332010">Call</a>
+  </nav>
 
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
@@ -73,13 +81,37 @@
       <article>
         <span>Time</span>
         <strong>About 55 min</strong>
-        <p>Departures throughout the day.</p>
+        <p data-quick-schedule>Today: every 30 minutes.</p>
       </article>
       <article>
         <span>Access</span>
         <strong>No walking</strong>
         <p>Ramps can support wheelchair loading.</p>
       </article>
+    </section>
+
+    <section class="section schedule-section" id="schedule" aria-labelledby="schedule-title">
+      <div class="schedule-copy">
+        <h2 id="schedule-title">Know when the next tour leaves.</h2>
+        <p>The current site says when the last tour departs, but it does not make the departure cadence obvious. This prototype treats tour timing like a primary conversion detail and keeps the cadence editable for seasonal changes.</p>
+      </div>
+      <div class="schedule-board" role="group" aria-label="Tour departure schedule">
+        <div class="schedule-status">
+          <span>Departures</span>
+          <strong data-schedule-label>Every 30 minutes today</strong>
+          <p data-schedule-note>Observed onsite June 9, 2026. Confirm whether this cadence applies daily or seasonally.</p>
+        </div>
+        <div class="next-times">
+          <span>Next departures</span>
+          <ol data-next-departures aria-live="polite">
+            <li>Loading schedule</li>
+          </ol>
+        </div>
+        <div class="schedule-actions">
+          <a class="button primary" data-bind-href="ticketsUrl" href="https://www.missouriscave.com/" target="_blank" rel="noreferrer">Get tickets</a>
+          <a class="button light" data-phone-link href="tel:+14178332010">(417)&nbsp;833&#8209;2010</a>
+        </div>
+      </div>
     </section>
 
     <section class="section tour-section" id="tour">
@@ -126,6 +158,7 @@
         <article class="planner-card">
           <h3>Hours</h3>
           <p data-hours-note>Open daily except Thanksgiving, Christmas Eve, and Christmas Day. Last tour departs one hour before closing.</p>
+          <p class="inline-note" data-schedule-note-short>Today's observed cadence: every 30 minutes.</p>
           <a data-bind-href="officialUrl" href="https://www.missouriscave.com/" target="_blank" rel="noreferrer">Confirm today's schedule</a>
         </article>
 

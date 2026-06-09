@@ -7,6 +7,32 @@ const formatHour = (time) => {
   return minutes ? `${hour12}:${String(minutes).padStart(2, "0")} ${suffix}` : `${hour12} ${suffix}`;
 };
 
+const timeToMinutes = (time) => {
+  const [hours, minutes] = time.split(":").map(Number);
+  return hours * 60 + minutes;
+};
+
+const minutesToLabel = (totalMinutes) => {
+  const minutesInDay = 24 * 60;
+  const normalized = ((totalMinutes % minutesInDay) + minutesInDay) % minutesInDay;
+  const hours = Math.floor(normalized / 60);
+  const minutes = normalized % 60;
+  return formatHour(`${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`);
+};
+
+const getCentralMinutes = () => {
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/Chicago",
+    hour: "numeric",
+    minute: "numeric",
+    hour12: false
+  }).formatToParts(new Date());
+
+  const hour = Number(parts.find((part) => part.type === "hour")?.value ?? 0);
+  const minute = Number(parts.find((part) => part.type === "minute")?.value ?? 0);
+  return hour * 60 + minute;
+};
+
 const bindLinks = (site) => {
   document.querySelectorAll("[data-bind-href]").forEach((node) => {
     const key = node.dataset.bindHref;
@@ -18,6 +44,50 @@ const bindLinks = (site) => {
     phoneLink.href = site.contact.phoneHref;
     phoneLink.textContent = site.contact.phoneDisplay;
   }
+};
+
+const renderDepartures = (site) => {
+  const departures = site.departures;
+  if (!departures) return;
+
+  const label = document.querySelector("[data-schedule-label]");
+  const quick = document.querySelector("[data-quick-schedule]");
+  const note = document.querySelector("[data-schedule-note]");
+  const shortNote = document.querySelector("[data-schedule-note-short]");
+  const list = document.querySelector("[data-next-departures]");
+
+  if (label) label.textContent = departures.cadenceLabel;
+  if (quick) quick.textContent = departures.quickLabel;
+  if (note) note.textContent = departures.note;
+  if (shortNote) shortNote.textContent = departures.shortNote;
+  if (!list) return;
+
+  const first = timeToMinutes(departures.firstTour);
+  const last = timeToMinutes(departures.lastTour);
+  const frequency = departures.frequencyMinutes;
+  const now = getCentralMinutes();
+  const allTimes = [];
+
+  for (let time = first; time <= last; time += frequency) {
+    allTimes.push(time);
+  }
+
+  let upcoming = allTimes.filter((time) => time >= now).slice(0, 4).map((time) => ({
+    label: minutesToLabel(time),
+    qualifier: "Today"
+  }));
+
+  if (upcoming.length < 4) {
+    const tomorrow = allTimes.slice(0, 4 - upcoming.length).map((time) => ({
+      label: minutesToLabel(time),
+      qualifier: "Tomorrow"
+    }));
+    upcoming = upcoming.concat(tomorrow);
+  }
+
+  list.innerHTML = upcoming
+    .map((time) => `<li><strong>${time.label}</strong><span>${time.qualifier}</span></li>`)
+    .join("");
 };
 
 const renderRates = (site) => {
@@ -67,6 +137,7 @@ fetch(dataPath)
   .then((response) => response.ok ? response.json() : Promise.reject(new Error("Missing site data")))
   .then((site) => {
     bindLinks(site);
+    renderDepartures(site);
     renderRates(site);
     renderHours(site);
   })
