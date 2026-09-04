@@ -1,0 +1,28 @@
+{
+  "schema": "harpelle-status/1",
+  "repo": "HarpElle/fantastic-caverns-concept",
+  "name": "Fantastic Caverns concept",
+  "kind": "Concept site",
+  "stage": "dormant",
+  "health": "idle",
+  "summary": "Concept work from June.",
+  "updatedAt": "2026-09-04",
+  "updatedBy": "Claude Code (Fable 5.1)",
+  "current": [
+    "No activity since 2026-06-09."
+  ],
+  "inFlight": [],
+  "blockers": [],
+  "decisions": [
+    "Archive or keep as portfolio piece."
+  ],
+  "next": [],
+  "later": [],
+  "intentions": "Portfolio piece.",
+  "links": [
+    {
+      "label": "Repo",
+      "url": "https://github.com/HarpElle/fantastic-caverns-concept"
+    }
+  ]
+}
