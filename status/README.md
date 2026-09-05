@@ -40,3 +40,44 @@ dormant | retired | internal | automated), `health` (healthy | attention |
 blocked | idle), `summary`, `updatedAt`, `updatedBy`, `current[]`,
 `inFlight[{ref,title,state}]`, `blockers[]`, `decisions[]`, `next[]`,
 `later[]`, `intentions`, `links[{label,url}]`.
+
+## Waiting on something outside this repo (added 2026-09-05)
+
+Work that is parked on an external condition (a library release, a store review, a
+third-party approval, a date, another repo's PR) is recorded so a portfolio pass can
+re-check it and give the green light when the condition is met. Put it in two places:
+
+- `CURRENT.md` under a heading **Waiting on** as one bullet per item:
+  `- <what is parked> · until <condition> · check: <command or URL> · since <date> · owner <who>`
+- `status.json` under `waits[]` with the same fields:
+
+```json
+"waits": [
+  {
+    "item": "PR #42 TypeScript 7 bump (web)",
+    "condition": "typescript-eslint publishes a peer range that admits typescript 7",
+    "check": "npm view @typescript-eslint/parser peerDependencies.typescript",
+    "expect": "range includes 7.0.x",
+    "since": "2026-09-04",
+    "owner": "any agent",
+    "lastChecked": "2026-09-05",
+    "lastResult": "still waiting: >=4.8.4 <6.1.0"
+  }
+]
+```
+
+Rules for waits: `check` must be something a script or a person can run without
+credentials or judgment where possible (an npm view, a `gh pr view`, a public URL,
+a date). An agent that touches the repo re-runs each `check`, updates `lastChecked`
+and `lastResult`, and when the condition is met either finishes the work or moves
+the item to "Decisions for Jason" with a recommendation. The executive hub reads
+`waits[]` and lists them on its "Waiting on" panel with a green light when
+`lastResult` starts with `met`.
+
+## Decision hygiene (added 2026-09-05)
+
+`decisions[]` is a queue, not a history. When Jason answers, the agent removes the
+item from `decisions[]` and `CURRENT.md`, records the answer in `LOG.md`, and acts
+on it. Items that a merged PR or a shipped build has made moot are removed the same
+way. A decision older than 30 days without an answer is restated with the current
+recommendation or dropped. Do not annotate answered items in place.
