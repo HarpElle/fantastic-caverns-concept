@@ -1,6 +1,6 @@
 # Fantastic Caverns concept — plan
 
-Updated: 2026-09-04 by Claude Code (Fable 5.1)
+Updated: 2026-09-07 by Claude Code (Fable 5.1)
 
 ## Intentions
 

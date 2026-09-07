@@ -1,6 +1,6 @@
 # Fantastic Caverns concept — current state
 
-Updated: 2026-09-04 by Claude Code (Fable 5.1)
+Updated: 2026-09-07 by Claude Code (Fable 5.1)
 Stage: **dormant** · Health: **idle**
 
 Concept work from June.
@@ -19,7 +19,7 @@ Concept work from June.
 
 ## Decisions for Jason
 
-- Archive or keep as portfolio piece.
+- None waiting (queue cleared 2026-09-07; accepted items are at the top of PLAN.md Next).
 
 ## Links
 
